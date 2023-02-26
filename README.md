@@ -30,7 +30,8 @@ NOTE: IF elasticsearch is returning an error about the vm.max_map_count=262144:
 Windows: in powershell:
 1. wsl -d docker-desktop
 2. sysctl -w vm.max_map_count=262144
-Have not encoutered this on unix.
+
+I have not encoutered this on unix.
 
 If you want to use a standalone Elasticsearch instance, download the version 7.15 from the [Elasticsearch website](https://www.elastic.co/downloads/past-releases/elasticsearch-7-15-0) and run the following command in the extracted bin folder: `./elasticsearch`
 
