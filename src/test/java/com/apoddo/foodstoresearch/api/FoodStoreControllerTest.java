@@ -33,7 +33,7 @@ public class FoodStoreControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private FoodStoreService foodStoreService;
+    private FoodStoreServiceImpl foodStoreService;
 
     @MockBean
     private FoodStoreLoader foodStoreLoader;

@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 @Service
-public class FoodStoreService {
+public class FoodStoreServiceImpl implements IFoodStoreService{
     /**
      * Constructs a new FoodStoreService object.
      *
@@ -25,7 +25,7 @@ public class FoodStoreService {
     private final IFoodStoreRepository repository;
 
     @Autowired
-    public FoodStoreService(IFoodStoreRepository repository) {
+    public FoodStoreServiceImpl(IFoodStoreRepository repository) {
         this.repository = repository;
     }
 
@@ -37,7 +37,6 @@ public class FoodStoreService {
      * @param distance  the distance in kilometers to search within
      * @param batchSize the size of the query which will be returned
      * @return a list of FoodStore objects that match the search criteria
-     * @throws IOException if an error occurs while communicating with Elasticsearch
      */
     public List<FoodStore> searchNearestStores(double latitude, double longitude, int distance, int batchSize) throws IOException {
         return repository.searchNearestStore(latitude, longitude, distance, batchSize);
