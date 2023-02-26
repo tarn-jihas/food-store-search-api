@@ -19,12 +19,12 @@ public class FoodStoreServiceTest {
     @Mock
     private IFoodStoreRepository repository;
 
-    private FoodStoreService service;
+    private FoodStoreServiceImpl service;
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        service = new FoodStoreService(repository);
+        service = new FoodStoreServiceImpl(repository);
     }
 
     @Test

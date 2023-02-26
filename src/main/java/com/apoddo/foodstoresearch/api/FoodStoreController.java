@@ -21,7 +21,7 @@ import java.util.List;
 @RestController
 public class FoodStoreController {
 
-    private final FoodStoreService service;
+    private final IFoodStoreService service;
 
     private ISearchParamsParser parser;
 
@@ -34,8 +34,8 @@ public class FoodStoreController {
      * @param service an instance of FoodStoreService used to perform food store searches
      */
     @Autowired
-    public FoodStoreController(FoodStoreService service,
-                              ISearchParamsParser parser,
+    public FoodStoreController(IFoodStoreService service,
+                               ISearchParamsParser parser,
                                ISearchParamsValidator validator) {
         this.service = service;
         this.parser = parser;
