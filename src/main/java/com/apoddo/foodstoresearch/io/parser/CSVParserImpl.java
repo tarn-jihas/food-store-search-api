@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class CSVParserImpl implements ICSVParser {
-    private ICSVReader csvReader;
+    private final ICSVReader csvReader;
 
     @Autowired
     public CSVParserImpl(ICSVReader csvReader) {

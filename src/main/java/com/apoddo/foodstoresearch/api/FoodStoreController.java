@@ -23,10 +23,10 @@ public class FoodStoreController {
 
     private final IFoodStoreService service;
 
-    private ISearchParamsParser parser;
+    private final ISearchParamsParser parser;
 
 
-    private ISearchParamsValidator validator;
+    private final ISearchParamsValidator validator;
 
     /**
      * This constructor creates an instance of FoodStoreController.

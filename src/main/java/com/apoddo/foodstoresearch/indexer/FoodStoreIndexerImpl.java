@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Service
 public class FoodStoreIndexerImpl implements IFoodStoreIndexer {
-    private ElasticSearchClient client;
+    private final ElasticSearchClient client;
 
     @Autowired
     public FoodStoreIndexerImpl(ElasticSearchClient client) {
