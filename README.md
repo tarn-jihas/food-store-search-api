@@ -22,8 +22,8 @@ To get started with the API, follow these steps:
 4. In the root directory of the project, run `docker-compose up` to start the Elasticsearch instance and the API instance. The instances will be able to communicate with each other.
 5. To access the API, navigate to `http://localhost:8080`.
 6. The API provides two endpoints:
-   - `/searchNearestStores`: Expects 2 required arguments, latitude and longitude, and two optional parameters distance and batchSize. It returns stores that are within a radius of the provided distance (in kilometers). The default batch size is 10, and the default distance is 1.
-   - `/searchByPartialNameOrAddress`: Expects an inputParam `string`, which is required, and an optional `batch size`.
+   - `/searchNearestStores`: Expects 2 required arguments, `latitude` and `longitude`, and two optional parameters `distance` and `batchSize`. It returns stores that are within a radius of the provided `distance` (in kilometers). The default batch size is 10, and the default distance is 1.
+   - `/searchByPartialNameOrAddress`: Expects an inputParam `string`, which is required, and an optional `batchSize`.
 7. To stop the instances, run `docker-compose down`.
 
 If you want to use a standalone Elasticsearch instance, download the version 7.15 from the [Elasticsearch website](https://www.elastic.co/downloads/past-releases/elasticsearch-7-15-0) and run the following command in the extracted bin folder: `./elasticsearch`
