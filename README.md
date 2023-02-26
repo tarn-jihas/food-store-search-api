@@ -43,4 +43,4 @@ The application uses the following libraries:
 
 ## Data
 
-The data used by the API is loaded from a provided CSV file.
+The data used by the API is loaded from a provided CSV file. File used here is [CSV](https://drive.google.com/file/d/1S2GbGliw6JhLAdukY2t0zPfzqurFOvjh/view?usp=sharing)
