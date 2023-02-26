@@ -36,9 +36,9 @@ public class FoodStoreRepositoryImpl implements IFoodStoreRepository {
     @Value("${indexing.enabled}")
     private boolean indexingEnabled;
 
-    private ElasticSearchClient client;
+    private final ElasticSearchClient client;
 
-    private IFoodStoreIndexer foodStoreIndexer;
+    private final IFoodStoreIndexer foodStoreIndexer;
 
     @Autowired
     public FoodStoreRepositoryImpl(ElasticSearchClient client, IFoodStoreIndexer foodStoreIndexer) {
