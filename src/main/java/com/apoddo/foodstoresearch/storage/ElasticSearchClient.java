@@ -20,7 +20,7 @@ public class ElasticSearchClient {
     // The instance of the RestHighLevelClient class.
     private final RestHighLevelClient client;
 
-    private String esHost;
+    private final String esHost;
 
     /**
      * Creates a new instance of the ElasticSearchClient class with a default configuration, and initializes the
