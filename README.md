@@ -24,11 +24,11 @@ To get started with the API, follow these steps:
    - `/searchByPartialNameOrAddress`: Expects an input parameter `string`, which is required, and an optional `batch size`.
 7. To stop the instances, run `docker-compose down`.
 
-If you want to use a standalone Elasticsearch instance, download the version 7.15 from the [Elasticsearch website](https://www.elastic.co/downloads/past-releases/elasticsearch-7-15-0) and run the following command in the extracted bin folder: ./elasticsearch
+If you want to use a standalone Elasticsearch instance, download the version 7.15 from the [Elasticsearch website](https://www.elastic.co/downloads/past-releases/elasticsearch-7-15-0) and run the following command in the extracted bin folder: `./elasticsearch`
 
 To run the project with the local elastic search instance use the following command from the project's root dir after the elastic saerch instance is up: 
-1. ./mvnw dependency:resolve
-2. ./mvnw spring-boot:run
+1. `./mvnw dependency:resolve`
+2. `./mvnw spring-boot:run`
 
 
 ## Libraries
