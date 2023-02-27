@@ -2,7 +2,7 @@
 
 This API provides two endpoints for searching food stores based on various criteria, using data stored in an Elasticsearch engine. The API includes two endpoints: `searchNearestStores` and `searchByPartialNameOrAddress`.
 
-Postman collecton json: [JSON](https://api.jsonserve.com/uMFtdB)
+[POSTMAN COLLECTION JSON](https://api.jsonserve.com/uMFtdB)
 
 ## Requirements
 
