@@ -1,14 +1,14 @@
 package com.apoddo.foodstoresearch.api.param_parser.model;
 
-public class SearchParams {
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+public class SearchParams {
     private int distance;
     private int batchSize;
     private double latitude;
     private double longitude;
     private String partialQuery;
-
-    SearchParams() {}
 
     public int getDistance() {
         return distance;

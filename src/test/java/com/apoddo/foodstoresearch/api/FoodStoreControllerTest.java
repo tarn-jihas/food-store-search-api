@@ -52,8 +52,8 @@ public class FoodStoreControllerTest {
         String batchSize = "10";
 
         List<FoodStore> stores = Arrays.asList(
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store A").setStreet_Name("123 Main St").setLatitude(37.7749).setLongitude(-122.4194).build(),
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store B").setStreet_Name("456 Elm St").setLatitude(37.7750).setLongitude(-122.4195).build()
+                 FoodStore.builder().Entity_Name("Store A").Street_Name("123 Main St").Latitude(37.7749).Longitude(-122.4194).build(),
+                 FoodStore.builder().Entity_Name("Store B").Street_Name("456 Elm St").Latitude(37.7750).Longitude(-122.4195).build()
         );
 
         SearchParams params;
@@ -84,8 +84,8 @@ public class FoodStoreControllerTest {
         String batchSize = "10";
 
         List<FoodStore> stores = Arrays.asList(
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store A").setStreet_Name("123 Main St").build(),
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store B").setStreet_Name("789 Main St").build()
+                FoodStore.builder().Entity_Name("Store A").Street_Name("123 Main St").build(),
+                FoodStore.builder().Entity_Name("Store B").Street_Name("789 Main St").build()
         );
 
         SearchParams params = new SearchParams.Builder().batchSize(Integer.parseInt(batchSize)).partialQuery(inputParam).build();

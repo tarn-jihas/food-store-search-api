@@ -36,8 +36,8 @@ public class FoodStoreServiceTest {
         int batchSize = 10;
 
         List<FoodStore> stores = Arrays.asList(
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store A").setStreet_Name("123 Main St").setLatitude(37.7749).setLongitude(-122.4194).build(),
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store B").setStreet_Name("456 Elm St").setLatitude(37.7750).setLongitude(-122.4195).build()
+                FoodStore.builder().Entity_Name("Store A").Street_Name("123 Main St").Latitude(37.7749).Longitude(-122.4194).build(),
+                FoodStore.builder().Entity_Name("Store B").Street_Name("456 Elm St").Latitude(37.7750).Longitude(-122.4195).build()
         );
 
         when(repository.searchNearestStore(latitude, longitude, distance, batchSize)).thenReturn(stores);
@@ -55,8 +55,8 @@ public class FoodStoreServiceTest {
         String criteria = "main";
         int batchSize = 10;
         List<FoodStore> stores = Arrays.asList(
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store A").setStreet_Name("123 Main St").build(),
-                new FoodStore.FoodStoreBuilder().setEntity_Name("Store B").setStreet_Name("789 Main St").build()
+                FoodStore.builder().Entity_Name("Store A").Street_Name("123 Main St").build(),
+                FoodStore.builder().Entity_Name("Store B").Street_Name("789 Main St").build()
         );
 
         when(repository.searchByPartialNameOrAddress(criteria, batchSize)).thenReturn(stores);

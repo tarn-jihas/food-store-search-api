@@ -14,6 +14,7 @@ import org.elasticsearch.common.unit.DistanceUnit;
 import org.elasticsearch.index.query.GeoDistanceQueryBuilder;
 import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.sort.SortBuilders;
@@ -167,7 +168,6 @@ public class FoodStoreRepositoryImpl implements IFoodStoreRepository {
 
         SearchHits searchHits;
         try {
-
             // Get a client instance and execute the search
             org.elasticsearch.action.search.SearchResponse searchResponse = client.getClient().search(searchRequest, RequestOptions.DEFAULT);
             searchHits = searchResponse.getHits();
@@ -185,21 +185,21 @@ public class FoodStoreRepositoryImpl implements IFoodStoreRepository {
      */
     private List<FoodStore> mapSearchHitsToFoodStores(SearchHits searchHits) {
                 return Arrays.stream(searchHits.getHits())
-                .map(hit -> hit.getSourceAsMap())
-                .map(sourceMap -> new FoodStore.FoodStoreBuilder()
-                        .setCounty((String) sourceMap.getOrDefault(FieldName.getCounty(), ""))
-                        .setLicense_Number((String) sourceMap.getOrDefault(FieldName.getLicenseNumber(), ""))
-                        .setEstablishment_Type((String) sourceMap.getOrDefault(FieldName.getEstablishmentType(), ""))
-                        .setEntity_Name((String) sourceMap.getOrDefault(FieldName.getEntityName(), ""))
-                        .setDBA_Name((String) sourceMap.getOrDefault(FieldName.getDbaName(), ""))
-                        .setStreet_Number((String) sourceMap.getOrDefault(FieldName.getStreetNumber(), ""))
-                        .setStreet_Name((String) sourceMap.getOrDefault(FieldName.getStreetName(), ""))
-                        .setCity((String) sourceMap.getOrDefault(FieldName.getCity(), ""))
-                        .setState_Abbreviation((String) sourceMap.getOrDefault(FieldName.getStateAbbreviation(), ""))
-                        .setZip_Code((String) sourceMap.getOrDefault(FieldName.getZipCode(), ""))
-                        .setSquare_Footage(sourceMap.get(FieldName.getSquareFootage()) != null ? Integer.parseInt(sourceMap.get(FieldName.getSquareFootage()).toString()) : 0)
-                        .setLatitude(sourceMap.get("location") != null ? ((Map<String, Object>) sourceMap.get("location")).get("lat") != null ? Double.parseDouble(((Map<String, Object>) sourceMap.get("location")).get("lat").toString()) : 0.0 : 0.0)
-                        .setLongitude(sourceMap.get("location") != null ? ((Map<String, Object>) sourceMap.get("location")).get("lon") != null ? Double.parseDouble(((Map<String, Object>) sourceMap.get("location")).get("lon").toString()) : 0.0 : 0.0)
+                .map(SearchHit::getSourceAsMap)
+                .map(sourceMap -> FoodStore.builder()
+                        .County((String) sourceMap.getOrDefault(FieldName.getCounty(), ""))
+                        .License_Number((String) sourceMap.getOrDefault(FieldName.getLicenseNumber(), ""))
+                        .Establishment_Type((String) sourceMap.getOrDefault(FieldName.getEstablishmentType(), ""))
+                        .Entity_Name((String) sourceMap.getOrDefault(FieldName.getEntityName(), ""))
+                        .DBA_Name((String) sourceMap.getOrDefault(FieldName.getDbaName(), ""))
+                        .Street_Number((String) sourceMap.getOrDefault(FieldName.getStreetNumber(), ""))
+                        .Street_Name((String) sourceMap.getOrDefault(FieldName.getStreetName(), ""))
+                        .City((String) sourceMap.getOrDefault(FieldName.getCity(), ""))
+                        .State_Abbreviation((String) sourceMap.getOrDefault(FieldName.getStateAbbreviation(), ""))
+                        .Zip_Code((String) sourceMap.getOrDefault(FieldName.getZipCode(), ""))
+                        .Square_Footage(sourceMap.get(FieldName.getSquareFootage()) != null ? Integer.parseInt(sourceMap.get(FieldName.getSquareFootage()).toString()) : 0)
+                        .Latitude(sourceMap.get("location") != null ? ((Map<String, Object>) sourceMap.get("location")).get("lat") != null ? Double.parseDouble(((Map<String, Object>) sourceMap.get("location")).get("lat").toString()) : 0.0 : 0.0)
+                        .Longitude(sourceMap.get("location") != null ? ((Map<String, Object>) sourceMap.get("location")).get("lon") != null ? Double.parseDouble(((Map<String, Object>) sourceMap.get("location")).get("lon").toString()) : 0.0 : 0.0)
                         .build())
                 .collect(Collectors.toList());
     }
