@@ -24,7 +24,9 @@ To get started with the API, follow these steps:
 6. The API provides two endpoints:
    - `/searchNearestStores`: Expects 2 required arguments, `latitude` and `longitude`, and two optional parameters `distance` and `batchSize`. It returns stores that are within a radius of the provided `distance` (in kilometers). The default `batchSize` is 10, and the default `distance` is 1.
    - `/searchByPartialNameOrAddress`: Expects an inputParam `string`, which is required, and an optional `batchSize`.
+   
  `/searchByPartialNameOrAddress?inputParam=john&batchSize=50`
+ 
  `/searchNearestStores?latitude=40.717253&longitude=-74.009796&distance=100&batchSize=50`
 7. To stop the instances, run `docker-compose down`.
 
