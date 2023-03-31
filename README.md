@@ -28,6 +28,8 @@ To get started with the API, follow these steps:
  `/searchByPartialNameOrAddress?inputParam=john&batchSize=50`
  
  `/searchNearestStores?latitude=40.717253&longitude=-74.009796&distance=100&batchSize=50`
+ 
+ 
 7. To stop the instances, run `docker-compose down`.
 
 NOTE: IF elasticsearch is returning an error about the vm.max_map_count=262144:
